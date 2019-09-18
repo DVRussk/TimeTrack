@@ -7,7 +7,7 @@ import java.util.ArrayList;
 public class TimeList {
     public ToggleButton btn;
     private ArrayList<Long> listOfExitEnterPoints;
-    private long spentTime;
+    public long spentTime;
 
     public TimeList(ArrayList<Long> listOfExitEnterPoints, long spentTime, ToggleButton btn) {
         this.btn = btn;
