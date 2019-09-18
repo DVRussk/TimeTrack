@@ -11,6 +11,7 @@ import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.Objects;
+import java.util.concurrent.TimeUnit;
 
 import android.content.Context;
 import android.support.v7.app.AppCompatActivity;
@@ -40,7 +41,7 @@ import javax.xml.transform.stream.StreamResult;
 
 public class MainActivity extends AppCompatActivity implements CompoundButton.OnCheckedChangeListener {
     TimeList[] times;
-
+    File newXml;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -51,20 +52,22 @@ public class MainActivity extends AppCompatActivity implements CompoundButton.On
             times[i] = new TimeList(new ArrayList<Long>(), 0, (ToggleButton) findViewById(btn_ids[i]));
             times[i].btn.setOnCheckedChangeListener(this);
         }
-        File newXml = new File(getFilesDir() + "/new.xml");
-        newXml.delete();
-        createFile();
+        newXml = new File(getFilesDir() + "/new.xml");
         if (newXml.exists()) {
             System.out.println("true");
         } else {
             System.out.println("false");
         }
         readFile(newXml, times);
+
     }
 
     @Override
     protected void onStop() {
         super.onStop();
+        newXml.delete();
+        createFile(new long[]{times[0].getSpentTime(),times[1].getSpentTime(),times[2].getSpentTime(),
+                times[3].getSpentTime(),times[4].getSpentTime(),times[5].getSpentTime()});
     }
 
     public void onBtnClick(View view) {
@@ -102,7 +105,7 @@ public class MainActivity extends AppCompatActivity implements CompoundButton.On
             serializer.endTag(null, "TimeList");
         }catch (Exception E){}
     }
-    protected void createFile() {
+    protected void createFile(long[] SpentTimes) {
         try {
             String filename = "new.xml";
 
@@ -115,12 +118,12 @@ public class MainActivity extends AppCompatActivity implements CompoundButton.On
 
             serializer.startTag(null, "root");
 
-            addTimeList(serializer, 10000, 0);
-            addTimeList(serializer, 11000, 1);
-            addTimeList(serializer, 12000, 2);
-            addTimeList(serializer, 13000, 3);
-            addTimeList(serializer, 14000, 4);
-            addTimeList(serializer, 15000, 5);
+            addTimeList(serializer, SpentTimes[0], 0);
+            addTimeList(serializer, SpentTimes[1], 1);
+            addTimeList(serializer, SpentTimes[2], 2);
+            addTimeList(serializer, SpentTimes[3], 3);
+            addTimeList(serializer, SpentTimes[4], 4);
+            addTimeList(serializer, SpentTimes[5], 5);
 
             serializer.endTag(null, "root");
 
