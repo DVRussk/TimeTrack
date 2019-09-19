@@ -1,10 +1,12 @@
 <root>
     <TimeList>
-        <SpentTime>
-            //time in millis
-        </SpentTime>
-        <btn>
-            //number from 0 to 5
-        </btn>
+        <Name>//name</Name>
+        <SpentTime>//time in millis</SpentTime>
+        <btn>//number from 0 to 5</btn>
+        <Number>//number of list from 0</Number>
+        <ListOfPoints>
+            <Point>//Point1</Point>
+            <Point>//Point2</Point>
+        </ListOfPoints>
     </TimeList>
 </root>

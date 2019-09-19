@@ -4,13 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:screenOrientation="portrait">
 
     <ToggleButton
         android:id="@+id/btn2"
-        android:onClick="onBtnClick"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:onClick="onBtnClick"
         android:text="Телефония2"
         app:layout_constraintBottom_toTopOf="@+id/btn4"
         app:layout_constraintEnd_toStartOf="@+id/btn3"
@@ -19,11 +20,10 @@
 
     <ToggleButton
         android:id="@+id/btn3"
-        android:onClick="onBtnClick"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginEnd="1dp"
-        android:layout_marginRight="1dp"
+        android:onClick="onBtnClick"
         android:text="Телефония3"
         app:layout_constraintBottom_toTopOf="@+id/btn5"
         app:layout_constraintEnd_toEndOf="parent"
@@ -32,24 +32,22 @@
 
     <ToggleButton
         android:id="@+id/btn4"
-        android:onClick="onBtnClick"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginBottom="2dp"
+        android:onClick="onBtnClick"
         android:text="Телефония4"
-        app:layout_constraintBottom_toTopOf="@+id/btn6"
+        app:layout_constraintBottom_toTopOf="@+id/textView"
         app:layout_constraintEnd_toStartOf="@+id/btn5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btn2" />
 
     <ToggleButton
         android:id="@+id/btn5"
-        android:onClick="onBtnClick"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginEnd="1dp"
-        android:layout_marginRight="1dp"
         android:layout_marginBottom="131dp"
+        android:onClick="onBtnClick"
         android:text="Телефония5"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -58,20 +56,21 @@
 
     <Button
         android:id="@+id/btn6"
+        android:layout_width="230dp"
+        android:layout_height="64dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
         android:onClick="onBtnClick"
-        android:layout_width="410dp"
-        android:layout_height="130dp"
         android:text="Телефония6"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/btn4"
-        app:layout_constraintStart_toEndOf="@+id/btn4"
-        app:layout_constraintTop_toBottomOf="@+id/btn4" />
+        app:layout_constraintEnd_toStartOf="@+id/button"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <ToggleButton
         android:id="@+id/btn"
-        android:onClick="onBtnClick"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:onClick="onBtnClick"
         android:text="Телефония"
         app:layout_constraintBottom_toTopOf="@+id/btn2"
         app:layout_constraintEnd_toStartOf="@+id/btn1"
@@ -80,15 +79,39 @@
 
     <ToggleButton
         android:id="@+id/btn1"
-        android:onClick="onBtnClick"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginEnd="1dp"
-        android:layout_marginRight="1dp"
+        android:onClick="onBtnClick"
         android:text="Телефония1"
         app:layout_constraintBottom_toTopOf="@+id/btn3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/btn"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="0dp"
+        android:layout_height="67dp"
+        android:layout_marginStart="1dp"
+        android:layout_marginEnd="1dp"
+        android:layout_marginBottom="64dp"
+        android:text="TextView"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn4" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="81dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="7dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:text="Button"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
 
 </android.support.constraint.ConstraintLayout>

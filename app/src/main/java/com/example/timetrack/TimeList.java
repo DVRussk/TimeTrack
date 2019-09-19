@@ -6,15 +6,26 @@ import java.util.ArrayList;
 
 public class TimeList {
     public ToggleButton btn;
-    private ArrayList<Long> listOfExitEnterPoints;
+    public int btnNum;
+    protected String name;
+    public int number;
+    public ArrayList<Long> listOfExitEnterPoints;
     public long spentTime;
 
-    public TimeList(ArrayList<Long> listOfExitEnterPoints, long spentTime, ToggleButton btn) {
+    public TimeList(ArrayList<Long> listOfExitEnterPoints, long spentTime, ToggleButton btn, int btnNum, int number, String name) {
         this.btn = btn;
         this.listOfExitEnterPoints = listOfExitEnterPoints;
         this.spentTime = spentTime;
+        this.number = number;
+        this.name = name;
+        this.btnNum = btnNum;
     }
-
+    public int getNumber(){
+        return this.number;
+    }
+    public int getBtnNum(){
+        return this.btnNum;
+    }
     public ToggleButton getButton() {
         return this.btn;
     }
@@ -34,6 +45,10 @@ public class TimeList {
         this.listOfExitEnterPoints.add(point);
     }
     public long getLastPoint(){
+        if(this.listOfExitEnterPoints.size() == 0) return -1;
         return this.listOfExitEnterPoints.get(this.listOfExitEnterPoints.size()-1);
+    }
+    public String getName(){
+        return this.name;
     }
 }
